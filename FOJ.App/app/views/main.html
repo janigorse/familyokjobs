@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row marketing">
+        <!--<a href="#/new" class="btn btn-success" role="button">Post a job</a>-->
+    </div>
+    
+    <div class="row marketing">
+        
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search"></span></span>
+            <input type="text" class="form-control" placeholder="search for job" ng-model="jobsearch">
+        </div>
+
+        <ol>
+            <li ng-repeat="job in jobs | filter: jobsearch">
+                <h1><a href="#/view/{{job.$id}}">{{job.title}}</a></h1>
+                <p>
+                <span>by {{job.companyName}} | {{job.salaryFrom}} - {{job.salaryTo}} | {{job.city}} | </span>
+                <span ng-if="job.state">{{job.state}} | </span>
+                <span>{{job.country}}</span>
+                </p>
+                <p>
+                <span ng-if="job.remote" class="label label-success">remote</span>
+                <span ng-if="job.flexitime" class="label label-success">flexi time</span>
+                <span ng-if="job.parental" class="label label-success">parental leave</span>
+                </p>
+            </li>
+        </ol>
+    
+    </div>
+
+    <div class="row">
+        <p class="noroute" ng-show="!jobs.length">No jobs? <a href="#/new">Create one!</a></p>
+    </div>
+</div>

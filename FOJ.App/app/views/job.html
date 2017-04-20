@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row marketing">
+        <h1 class="job-title">
+            {{job.title}} by {{job.companyName}}
+            <div>{{job.salaryFrom}} - {{job.salaryTo}}</div>
+        </h1>
+        
+            
+        <p>
+            <span class="job-location-label">Location:</span>
+            <span class="job-location-description">
+                {{job.city}}, 
+            </span>
+            <span ng-if="job.state" class="job-location-description">{{job.state}}, </span>
+            <span class="job-location-description">{{job.country}}</span>
+        </p>
+
+        <p>
+            <h2>Job description</h2>
+            <div class="job-description">
+                {{job.description}}
+            </div>
+        </p>
+
+        
+    </div>
+</div>

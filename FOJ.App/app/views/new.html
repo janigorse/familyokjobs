@@ -1,0 +1,144 @@
+
+
+<div class="container">
+
+    <div class="row marketing">
+
+        <h1>Tell us about position</h1>
+
+        <hr/>
+
+        <form name="postJobForm" class="form-horizontal" novalidate>
+            <div class="form-group">
+                <label for="exampleInputEmail1" class="col-sm-2 control-label">Job title</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="jobtitle" placeholder="full stack programmer, engineer," ng-model="job.title" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="city" class="col-sm-2 control-label">City</label>
+                <div class="col-sm-10">
+                    <input type="text" id="city" class="form-control" ng-model="job.city" placeholder="Orlando, San Francisco" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="state" class="col-sm-2 control-label">State</label>
+                <div class="col-sm-10">
+                    <select ng-model="job.state" class="form-control" ng-options="state.name for state in states">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="country" class="col-sm-2 control-label">Country</label>
+                <div class="col-sm-10">
+                    <select ng-model="job.country" class="form-control" ng-options="country.name for country in countries" required>
+                    </select>
+                </div>
+            </div>
+            
+            
+            
+            <div class="form-group">
+                <label for="salaryFrom" class="col-sm-2 control-label">Salary</label>
+            
+                <div class="col-sm-2">
+                    <input type="text" id="salaryFrom" class="form-control" ng-model="job.salaryFrom" placeholder="60,000">
+                </div>
+                
+                <div class="col-sm-2">
+                    <input type="text" id="salaryTo" class="form-control" ng-model="job.salaryTo" placeholder="150,000">
+                </div> 
+            </div>
+
+            <div class="form-group">
+                <label for="description" class="col-sm-2 control-label">Job desciption</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" rows="5" id="description" ng-model="job.description" required></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="jobContactEmail" class="col-sm-12 control-label">How can people apply?</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="jobContactEmail" placeholder="send your CV to john@yourcompany.com" ng-model="job.jobContactEmail" required>
+                </div>
+            </div>
+
+
+            <h1>Why is this job family friendly?</h1>
+
+            <hr/>
+
+            <div class="form-group">
+                <label for="remote" class="col-sm-2 control-label">Remote</label>
+                <div class="col-sm-10" style="margin-top: 6px">
+                    <input type="checkbox" id="remote" ng-model="job.remote"> Allow remote?
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="flexitime" class="col-sm-2 control-label">Flexi time</label>
+                <div class="col-sm-10" style="margin-top: 6px">
+                    <input type="checkbox" id="flexitime" ng-model="job.flexitime"> Flexi time possible?
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="parental" class="col-sm-2 control-label">Parental leave</label>
+                <div class="col-sm-1" style="margin-top: 6px">
+                    <input type="text" class="form-control" id="parental" ng-model="job.parental">
+                </div>
+                <div class="col-sm-2" style="margin-top: 6px">
+                    months
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="parental" class="col-sm-2 control-label">Daily hourly presence</label>
+                <div class="col-sm-1" style="margin-top: 6px">
+                    <input type="text" class="form-control" id="parental" ng-model="job.hourlypresence">
+                </div>
+                <div class="col-sm-2" style="margin-top: 6px">
+                    hours
+                </div>
+            </div>
+
+
+
+            <h1>Tell us about your company</h1>
+
+            <hr/>
+
+            <div class="form-group">
+                <label for="companyName" class="col-sm-2 control-label">Company name</label>
+                <div class="col-sm-10">
+                    <input type="text" id="companyName" class="form-control" ng-model="job.companyName" placeholder="your organization's name'" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="companyUrl" class="col-sm-2 control-label">Company URL</label>
+                <div class="col-sm-10">
+                    <input type="text" id="companyUrl" class="form-control" ng-model="job.companyUrl" placeholder="www.mycompany/jobs/apply" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="companyEmail" class="col-sm-2 control-label">Company email</label>
+                <div class="col-sm-10">
+                    <input type="email" id="city" class="form-control" ng-model="job.companyEmail" placeholder="" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <input type="submit" class="btn btn-success" ng-click="postJob()" value="Preview your ad">
+                    <!--<input type="submit" class="btn btn-success" ng-click="postJob()" ng-disabled="postJobForm.$invalid"> -->
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
