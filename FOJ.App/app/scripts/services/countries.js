@@ -253,5 +253,5 @@ angular.module('app')
             ];
 
             return countries;
-    }
+    };
 });

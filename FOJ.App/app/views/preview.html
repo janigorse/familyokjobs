@@ -14,8 +14,8 @@
             <span class="job-location-description">
                 {{job.city}}, 
             </span>
-            <span ng-if="job.state" class="job-location-description">{{job.state}}, </span>
-            <span class="job-location-description">{{job.country}}</span>
+            <span ng-if="job.state" class="job-location-description">{{job.state.name}}, </span>
+            <span class="job-location-description">{{job.country.name}}</span>
         </p>
 
         <p>
@@ -43,5 +43,9 @@
         </p>
 
         
+    </div>
+    <div class="col-sm-10">
+         <input type="submit" class="btn btn-success" ng-click="postJob()" value="Post your ad">
+         <input type="button" class="btn btn-primary" ng-click="back()" value="Back">
     </div>
 </div>

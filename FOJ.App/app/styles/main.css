@@ -241,14 +241,41 @@ input:not([type='submit']), textarea {
     text-align: left;
 }
 
+span {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.5rem;
+}
+
+.label {
+  font-family: 'Amatic SC', cursive;
+}
+
+.badge {
+  background-color: white;
+  color:#5cb85c;
+}
+
 @media (max-width: 767px) {
     .navbar-right {
         float: right !important;
+        margin-right: 1px;
     }
     .navbar-header {
         float: left !important;
     }
     .navbar-nav > li {
         float: left !important;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+    }
+
+    span {
+      font-size:1.3rem;
+    }
+
+    .label {
+      font-size:1.5rem;
     }
 }

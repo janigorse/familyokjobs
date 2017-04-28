@@ -13,7 +13,8 @@ angular
     'ui.bootstrap',
     'angulartics', 
     'angulartics.google.analytics',
-    'angular-loading-bar'
+    'angular-loading-bar',
+    'angularMoment'
   ])
   .config(function ($routeProvider) {
      // Initialize Firebase
@@ -26,6 +27,7 @@ angular
       messagingSenderId: "196222131841"
     };
 
+    
     firebase.initializeApp(config);
     
     $routeProvider
@@ -70,6 +72,10 @@ angular
         console.log("auth req");
         $location.path("/login");
       }
+    });
+
+    $rootScope.$on('jobIsInPreviewMode', function(event, data) {
+      $rootScope.jobPreview = data;
     });
   }])
   

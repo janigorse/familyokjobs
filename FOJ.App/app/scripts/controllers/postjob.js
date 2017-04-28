@@ -1,29 +1,24 @@
 'use strict';
 
 angular.module('app')
-  .controller('PostJobCtrl', function ($scope, $firebaseObject, $location, $route, $routeParams, moment, firebase, countryService, stateService) {
+  .controller('PostJobCtrl', function ($scope, $rootScope, $firebaseObject, $location, $route, $routeParams, moment, firebase, countryService, stateService) {
+
+    $scope.jobPreview = false;
+    $rootScope.$emit('jobIsInPreviewMode', true);
 
     $scope.postJob = function(){
-      var jobs = fireRef.ref('jobs');
-      /*
-      $scope.job = {
-        title: 'job.title',
-        city: 'job.city',
-        state: 'job.state',
-        country: 'job.country',
-        remote: 'job.remote',
-        salaryFrom: 'job.salaryFrom',
-        salaryTo: 'job.salaryTo',
-        description: 'job.description',
-        jobContactEmail: 'job.jobContactEmail',
-        postedDate: moment().format('YYYY-MM-DD HH:mm'),
-        companyName: 'job.companyName',
-        companyUrl: 'job.companyUrl',
-        companyEmail: 'job.companyEmail'
-      };
-      */
       postJob($scope.job);
       $location.path('/');
+    };
+
+    $scope.previewAd = function() {
+      $scope.jobPreview = true;
+      $rootScope.$emit('jobIsInPreviewMode', true);
+    };
+
+    $scope.back = function() {
+      $scope.jobPreview = false;
+      $rootScope.$emit('jobIsInPreviewMode', true);
     };
 
     function postJob(job) {  
@@ -51,7 +46,7 @@ angular.module('app')
 
     $scope.countries = countryService.getCountries();
     $scope.states = stateService.getStates();
-
+    /*
     $scope.job = {
         title: 'javascript engineer',
         city: 'san francisco',
@@ -67,5 +62,5 @@ angular.module('app')
         companyUrl: 'www.testcompany.com',
         companyEmail: 'info@company.com'
       };
-
+      */
   });

@@ -12,7 +12,7 @@
 
         <ol>
             <li ng-repeat="job in jobs | filter: jobsearch">
-                <h1><a href="#/view/{{job.$id}}">{{job.title}}</a></h1>
+                <h2><a href="#/view/{{job.$id}}">{{job.title}}</a></h2>
                 <p>
                 <span>by {{job.companyName}} | {{job.salaryFrom}} - {{job.salaryTo}} | {{job.city}} | </span>
                 <span ng-if="job.state">{{job.state}} | </span>
@@ -22,6 +22,7 @@
                 <span ng-if="job.remote" class="label label-success">remote</span>
                 <span ng-if="job.flexitime" class="label label-success">flexi time</span>
                 <span ng-if="job.parental" class="label label-success">parental leave</span>
+                <span class="ago" am-time-ago="job.postedDate"></span>
                 </p>
             </li>
         </ol>
@@ -29,6 +30,6 @@
     </div>
 
     <div class="row">
-        <p class="noroute" ng-show="!jobs.length">No jobs? <a href="#/new">Create one!</a></p>
+        <p class="noroute" ng-show="!jobs.length">loading...</p>
     </div>
 </div>
