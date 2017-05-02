@@ -14,7 +14,8 @@ angular
     'angulartics', 
     'angulartics.google.analytics',
     'angular-loading-bar',
-    'angularMoment'
+    'angularMoment',
+    'angularTrix'
   ])
   .config(function ($routeProvider) {
      // Initialize Firebase

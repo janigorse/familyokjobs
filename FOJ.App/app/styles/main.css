@@ -241,7 +241,7 @@ input:not([type='submit']), textarea {
     text-align: left;
 }
 
-span {
+span, select, trix-editor {
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.5rem;
 }
@@ -253,6 +253,10 @@ span {
 .badge {
   background-color: white;
   color:#5cb85c;
+}
+
+input.ng-invalid.ng-touched, trix-editor.ng-invalid.ng-touched {
+    border-color: #FA787E;
 }
 
 @media (max-width: 767px) {

@@ -8,11 +8,14 @@
     <link rel="manifest" href="/manifest.json">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="bower_components/trix/dist/trix.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -49,7 +52,7 @@
     <div class="footer">
       <div class="container text-center">
         <a href="#/about">About</a>
-        <a href="https://twitter.com/familyokjobs">Twitter</a>
+        <a href="https://twitter.com/janigorse">Follow me</a>
       </div>
     </div>
     
@@ -64,11 +67,21 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-5351811-11', 'auto');
+      ga('create', 'UA-5351811-12', 'auto');
       
     </script>
   
-    
+    <!-- Hotjar Tracking Code for https://familyokjobs.com -->
+  <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:490716,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
     
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -91,6 +104,8 @@
     <script src="bower_components/angulartics/src/angulartics.js"></script>
     <script src="bower_components/angulartics-google-analytics/lib/angulartics-ga.js"></script>
     <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/trix/dist/trix.js"></script>
+    <script src="bower_components/angular-trix/dist/angular-trix.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     

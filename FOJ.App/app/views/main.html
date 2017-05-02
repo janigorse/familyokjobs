@@ -14,14 +14,17 @@
             <li ng-repeat="job in jobs | filter: jobsearch">
                 <h2><a href="#/view/{{job.$id}}">{{job.title}}</a></h2>
                 <p>
-                <span>by {{job.companyName}} | {{job.salaryFrom}} - {{job.salaryTo}} | {{job.city}} | </span>
-                <span ng-if="job.state">{{job.state}} | </span>
-                <span>{{job.country}}</span>
+                <span>by <a target="_blank" href="http://{{job.companyUrl}}">{{job.companyName}}</a></span>
+                <span ng-if="job.salaryFrom"> | {{job.salaryFrom}} - {{job.salaryTo}} </span>
+                <span ng-if="job.city"> | {{job.city}} </span>
+                <span ng-if="job.state"> | {{job.state}}</span>
+                <span ng-if="job.country"> | {{job.country}}</span>
                 </p>
                 <p>
                 <span ng-if="job.remote" class="label label-success">remote</span>
                 <span ng-if="job.flexitime" class="label label-success">flexi time</span>
                 <span ng-if="job.parental" class="label label-success">parental leave</span>
+                <span ng-if="job.otherBenefit" class="label label-success">{{job.otherBenefit}}</span>
                 <span class="ago" am-time-ago="job.postedDate"></span>
                 </p>
             </li>

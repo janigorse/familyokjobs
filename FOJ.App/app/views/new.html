@@ -18,20 +18,22 @@
             <div class="form-group">
                 <label for="city" class="col-sm-2 control-label">City</label>
                 <div class="col-sm-10">
-                    <input type="text" id="city" class="form-control" ng-model="job.city" placeholder="Orlando, San Francisco" required>
+                    <input type="text" id="city" class="form-control" ng-model="job.city" placeholder="Orlando, San Francisco, remote, etc..">
                 </div>
             </div>
             <div class="form-group">
                 <label for="state" class="col-sm-2 control-label">State</label>
                 <div class="col-sm-10">
                     <select ng-model="job.state" class="form-control" ng-options="state.name for state in states">
+                        <option value=""></option>
                     </select>
                 </div>
             </div>
             <div class="form-group">
                 <label for="country" class="col-sm-2 control-label">Country</label>
                 <div class="col-sm-10">
-                    <select ng-model="job.country" class="form-control" ng-options="country.name for country in countries" required>
+                    <select ng-model="job.country" class="form-control" ng-options="country.name for country in countries">
+                        <option value=""></option>
                     </select>
                 </div>
             </div>
@@ -51,16 +53,20 @@
             </div>
 
             <div class="form-group">
-                <label for="description" class="col-sm-2 control-label">Job desciption</label>
+                <label for="description" class="col-sm-2 control-label">Job description</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" rows="5" id="description" ng-model="job.description" required></textarea>
+                    <trix-editor angular-trix ng-model="job.description" class="trix-content"></trix-editor>
+                    <!--<textarea class="form-control" rows="5" id="description" ng-model="job.description" required></textarea>-->
+                    
                 </div>
             </div>
+
+            
 
             <div class="form-group">
                 <label for="jobContactEmail" class="col-sm-12 control-label">How can people apply?</label>
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" id="jobContactEmail" placeholder="send your CV to john@yourcompany.com" ng-model="job.jobContactEmail" required>
+                    <input type="text" class="form-control" id="jobContactEmail" placeholder="send your CV to john@yourcompany.com or paste a link" ng-model="job.jobContactEmail" required>
                 </div>
             </div>
 
@@ -94,12 +100,12 @@
             </div>
 
             <div class="form-group">
-                <label for="parental" class="col-sm-2 control-label">Daily hourly presence</label>
-                <div class="col-sm-1" style="margin-top: 6px">
-                    <input type="text" class="form-control" id="parental" ng-model="job.hourlypresence">
+                <label for="other" class="col-sm-2 control-label">Other benefits</label>
+                <div class="col-sm-4" style="margin-top: 6px">
+                    <input type="text" class="form-control" id="other" ng-model="job.otherBenefit" ng-maxlength="50" ng-change="calcCharsLeft()">
                 </div>
                 <div class="col-sm-2" style="margin-top: 6px">
-                    hours
+                    {{benefitCharsLeft}} chars left
                 </div>
             </div>
 
@@ -126,13 +132,13 @@
             <div class="form-group row">
                 <label for="companyEmail" class="col-sm-2 control-label">Company email</label>
                 <div class="col-sm-10">
-                    <input type="email" id="city" class="form-control" ng-model="job.companyEmail" placeholder="" required>
+                    <input type="email" id="city" class="form-control" ng-model="job.companyEmail" placeholder="" >
                 </div>
             </div>
 
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <input type="submit" class="btn btn-success" ng-click="previewAd()" value="Preview your ad">
+                    <input type="submit" class="btn btn-success" ng-click="previewAd()" ng-disabled="postJobForm.$invalid" value="Preview your ad">
                     <!--<input type="submit" class="btn btn-success" ng-click="postJob()" ng-disabled="postJobForm.$invalid"> -->
                 </div>
             </div>
@@ -141,5 +147,7 @@
     </div>
 
 </div>
+
+
 
 <div ng-include="'views/preview.html'" ng-if="jobPreview"></div>

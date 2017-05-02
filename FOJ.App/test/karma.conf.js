@@ -38,6 +38,8 @@ module.exports = function(config) {
       'bower_components/angulartics/src/angulartics.js',
       'bower_components/angulartics-google-analytics/lib/angulartics-ga.js',
       'bower_components/angular-loading-bar/build/loading-bar.js',
+      'bower_components/trix/dist/trix.js',
+      'bower_components/angular-trix/dist/angular-trix.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
