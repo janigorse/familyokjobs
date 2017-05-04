@@ -11,7 +11,7 @@
         </div>
 
         <ol>
-            <li ng-repeat="job in jobs | filter: jobsearch">
+            <li ng-repeat="job in jobs | filter: jobsearch | orderBy: '-postedDate'">
                 <h2><a href="#/view/{{job.$id}}">{{job.title}}</a></h2>
                 <p>
                 <span>by <a target="_blank" href="http://{{job.companyUrl}}">{{job.companyName}}</a></span>
